@@ -18,6 +18,20 @@ const DisplayName = () => {
 		}
 	};
 
+	const validateInput = (e) => {
+		const regEx = /[^a-zA-Z]/;
+
+		if (regEx.test(e.target.value) === true) {
+			alert("Invalid Input");
+
+			e.target.value = e.target.value.replace(/[^a-zA-Z]/, "");
+		} else {
+			const { name, value } = e.target;
+
+			setName((prevState) => ({ ...prevState, [name]: value }));
+		}
+	};
+
 	return (
 		<>
 			<section>
@@ -32,7 +46,7 @@ const DisplayName = () => {
 							type="text"
 							name="fname"
 							id="fName"
-							onChange={(e) => setName({ ...fullName, fname: e.target.value })}
+							onChange={validateInput}
 						/>
 					</article>
 					<article>
@@ -41,7 +55,7 @@ const DisplayName = () => {
 							type="text"
 							name="lname"
 							id="lName"
-							onChange={(e) => setName({ ...fullName, lname: e.target.value })}
+							onChange={validateInput}
 						/>
 					</article>
 
