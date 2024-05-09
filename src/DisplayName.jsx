@@ -19,17 +19,21 @@ const DisplayName = () => {
   };
 
   const validateInput = (e) => {
-    const regEx = /[^a-zA-Z]/;
+    // const regEx = /[^a-zA-Z]/;
 
-    if (regEx.test(e.target.value) === true) {
-      alert("Invalid Input");
+    // if (regEx.test(e.target.value) === true) {
+    //   alert("Invalid Input");
 
-      e.target.value = e.target.value.replace(/[^a-zA-Z]/, "");
-    } else {
-      const { name, value } = e.target;
+    //   e.target.value = e.target.value.replace(/[^a-zA-Z]/, "");
+    // } else {
+    //   const { name, value } = e.target;
 
-      setName((prevState) => ({ ...prevState, [name]: value }));
-    }
+    //   setName((prevState) => ({ ...prevState, [name]: value }));
+    // }
+
+    const { name, value } = e.target;
+
+    setName((prevState) => ({ ...prevState, [name]: value }));
   };
 
   return (
