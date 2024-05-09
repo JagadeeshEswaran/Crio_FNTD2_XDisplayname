@@ -65,7 +65,7 @@ const DisplayName = () => {
           </article>
         </form>
 
-        <p>{showName && `Full Name: ${fullName.fname} ${fullName.lname}`}</p>
+        {showName && <p>{`Full Name: ${fullName.fname} ${fullName.lname}`}</p>}
       </section>
     </>
   );
